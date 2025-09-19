@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="405.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ca2.HelloController">
+    <children>
+        <TabPane fx:id="tabPane" prefHeight="409.0" prefWidth="640.0" style="-fx-background-color: #FFA07A;" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <!-- Drinks Tab -->
+                <Tab style="background-color: #90EE90;" text="Drinks">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ADD8E6;">
+                            <children>
+                                <TextField fx:id="DrinkNameField" layoutX="21.0" layoutY="14.0" promptText="Drink Name" style="-fx-background-color: #FFB6C1;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <ListView fx:id="drinksList" layoutX="69.0" layoutY="122.0" prefHeight="200.0" prefWidth="261.0" style="-fx-background-color: #FFFF00;" />
+                                <Button layoutX="52.0" layoutY="87.0" mnemonicParsing="false" onAction="#onAddDrink" style="-fx-background-color: #FFB6C1;" text="Add Drinks" />
+                                <Button fx:id="deleteDrinkButton" layoutX="163.0" layoutY="87.0" mnemonicParsing="false" onAction="#onDeleteDrink" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #FFB6C1;" text="Delete Drinks" />
+                                <Button fx:id="updateDrinkButton" layoutX="277.0" layoutY="87.0" mnemonicParsing="false" onAction="#onUpdateDrink" style="-fx-background-color: #FFB6C1;" text="Update Drinks" />
+                                <Button fx:id="resetDrinksButton" layoutX="583.0" layoutY="87.0" mnemonicParsing="false" onAction="#onHandleReset" style="-fx-background-color: #00008B;" text="Factory reset" />
+                                <TextField fx:id="IngredientsField" layoutX="196.0" layoutY="14.0" promptText="Enter Ingredients" style="-fx-background-color: #FFB6C1;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="originField" layoutX="196.0" layoutY="55.0" promptText="Enter Origin" style="-fx-background-color: #E6E6FA;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextArea fx:id="detailsBox" layoutX="420.0" layoutY="125.0" prefHeight="200.0" prefWidth="283.0" style="-fx-background-color: #FFFF00;" />
+                                <Button fx:id="saveDrinksButton" layoutX="394.0" layoutY="87.0" mnemonicParsing="false" onAction="#saveDrinks" style="-fx-background-color: #FFB6C1;" text="Save Drinks" />
+                                <Button fx:id="loadDrinksButton" layoutX="482.0" layoutY="87.0" mnemonicParsing="false" onAction="#loadDrinks" style="-fx-background-color: #FFB6C1;" text="Load Drinks" />
+                                <TextField fx:id="abvField" layoutX="26.0" layoutY="55.0" promptText="ABV (%)" style="-fx-background-color: #E6E6FA;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="searchField" layoutX="21.0" layoutY="337.0" promptText="Enter Search Query" style="-fx-background-color: #E6E6FA;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <Button layoutX="199.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchDrinkByName" text="Search by Name" />
+                                <Button layoutX="323.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchDrinkByIngredient" text="Search By Ingredient" />
+                                <Button layoutX="463.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchDrinkByAbv" prefHeight="25.0" prefWidth="118.0" text="Search by ABV" />
+                                <Button fx:id="backButton" layoutX="605.0" layoutY="337.0" mnemonicParsing="false" onAction="#navigateToMainScreen" text="Back" />
+                                <Label layoutX="7.0" layoutY="199.0" prefHeight="17.0" prefWidth="59.0" text="Drinks List:" />
+                                <Label layoutX="374.0" layoutY="208.0" text="Details:" />
+                                <TextField fx:id="descriptionField" layoutX="455.0" layoutY="8.0" prefHeight="72.0" prefWidth="327.0" promptText="Enter Description" style="-fx-background-color: #FFA500;">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </TextField>
+                                <Label layoutX="386.0" layoutY="33.0" text="Description:" />
+                        <Button layoutX="703.0" layoutY="87.0" mnemonicParsing="false" onAction="#onSortDrinks" style="-fx-background-color: #FFB6C1;" text="Sort Drinks" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <!-- Ingredients Tab -->
+                <Tab style="background-color: #90EE90;" text="Ingredients">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFE4B5;">
+                            <children>
+                                <TextField fx:id="nameIngredientField" layoutX="21.0" layoutY="41.0" promptText="Ingredient Name" style="-fx-background-color: #FFB6C1;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <ListView fx:id="ingredientList" layoutX="116.0" layoutY="122.0" prefHeight="200.0" prefWidth="242.0" />
+                                <Button layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#onAddIngredient" style="-fx-background-color: #FFB6C1;" text="Add Ingredients" />
+                                <Button layoutX="137.0" layoutY="87.0" mnemonicParsing="false" onAction="#onDeleteIngredient" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #FFB6C1;" text="Delete Ingredient" />
+                                <Button layoutX="271.0" layoutY="87.0" mnemonicParsing="false" onAction="#onUpdateIngredient" style="-fx-background-color: #FFB6C1;" text="Update Ingredient" />
+                                <Button layoutX="670.0" layoutY="87.0" mnemonicParsing="false" onAction="#onHandleReset" style="-fx-background-color: #8B0000; -fx-text-fill: #FFFFFF;" text="Factory reset" />
+                                <TextArea fx:id="detailsIngredientBox" layoutX="420.0" layoutY="125.0" prefHeight="200.0" prefWidth="283.0" />
+                                <Button layoutX="420.0" layoutY="87.0" mnemonicParsing="false" onAction="#saveIngredients" style="-fx-background-color: #E6E6FA;" text="Save Ingredients" />
+                                <Button layoutX="549.0" layoutY="87.0" mnemonicParsing="false" onAction="#loadIngredients" style="-fx-background-color: #E6E6FA;" text="Load Ingredients" />
+                                <TextField fx:id="searchIngredientField" layoutX="21.0" layoutY="337.0" promptText="Enter Search Query">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <Button layoutX="199.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchIngredientByName" text="Search by Name" />
+                                <Button layoutX="323.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchIngredientByDescription" text="Search By Description" />
+                                <Button layoutX="602.0" layoutY="337.0" mnemonicParsing="false" onAction="#navigateToMainScreen" text="Back" />
+                                <Label layoutX="21.0" layoutY="200.0" prefHeight="17.0" prefWidth="86.0" text="Ingredients List:" />
+                                <Label layoutX="374.0" layoutY="208.0" text="Details:" />
+                                <TextField fx:id="descriptionIngredientField" layoutX="351.0" layoutY="9.0" prefHeight="72.0" prefWidth="327.0" promptText="Enter Ingredient Description" style="-fx-background-color: #FFA500;">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </TextField>
+                                <Label layoutX="271.0" layoutY="36.0" text="Description:" />
+                        <Button layoutX="474.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSortIngredients" text="Sort Ingredients" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="background-color: #90EE90;" text="Recipes">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6FA;">
+                            <children>
+                                <ListView fx:id="recipesListView" layoutX="116.0" layoutY="122.0" prefHeight="200.0" prefWidth="242.0" style="-fx-background-color: #00FF7F;" />
+                                <Button layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#onAddIngredientToRecipe" style="-fx-background-color: #FFB6C1;" text="Add Recipe" />
+                                <Button layoutX="137.0" layoutY="87.0" mnemonicParsing="false" onAction="#onDeleteIngredientFromRecipe" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #FFB6C1;" text="Delete Recipe" />
+                                <Button layoutX="271.0" layoutY="87.0" mnemonicParsing="false" onAction="#onUpdateIngredientInRecipe" style="-fx-background-color: #FFB6C1;" text="Update Recipe" />
+                                <Button layoutX="670.0" layoutY="87.0" mnemonicParsing="false" onAction="#onHandleReset" style="-fx-background-color: #8B0000; -fx-text-fill: #FFFFFF;" text="Factory reset" />
+                                <TextArea fx:id="detailsRecipeBox" layoutX="420.0" layoutY="125.0" prefHeight="200.0" prefWidth="283.0" />
+                                <Button layoutX="423.0" layoutY="87.0" mnemonicParsing="false" onAction="#onSaveRecipes" style="-fx-background-color: #FF0000;" text="Save Recipes" />
+                                <Button layoutX="549.0" layoutY="87.0" mnemonicParsing="false" onAction="#loadRecipes" style="-fx-background-color: #FF0000;" text="Load Recipes" />
+                                <TextField fx:id="chosenIngredient" layoutX="27.0" layoutY="31.0" promptText="Enter Ingredient Name" style="-fx-background-color: #00FFFF;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="searchRecipeField" layoutX="21.0" layoutY="337.0" promptText="Enter Search Query" style="-fx-background-color: #00FFFF;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <Button layoutX="199.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSearchDrinkByName" text="Search by Drink Name" />
+                                <Button layoutX="474.0" layoutY="337.0" mnemonicParsing="false" onAction="#navigateToMainScreen" text="Back" />
+                                <Label layoutX="34.0" layoutY="200.0" prefHeight="17.0" prefWidth="72.0" text=" drinks List:" />
+                                <Label layoutX="374.0" layoutY="208.0" text="recipe:" />
+                        <Button layoutX="374.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSortRecipes" text="Sort Recipes" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

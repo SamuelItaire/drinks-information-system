@@ -1,0 +1,6 @@
+Mojito;Cuba;Refreshing cocktail;Mint, Rum, Sugar;14.000000
+Bloody Mary;USA;Tomato-based cocktail;Vodka, Tomato Juice;12.500000
+Old Fashioned;USA;Classic cocktail;Whiskey, Sugar, Bitters;40.000000
+Pina Colada;Puerto Rico;Tropical cocktail;Rum, Pineapple Juice, Coconut Cream;15.000000
+Margarita;Mexico;Zesty cocktail;Tequila, Lime Juice, Triple Sec;13.000000
+Guinness;Ireland;Class;Stout, water, BArley;4.500000
